@@ -1,6 +1,6 @@
 def count_words(text):
     """Return the amount of words in a text"""
-    return len(text)
+    return len(text.split())
 
 def count_letters(text):
     """Return a dictionary with the count of each characters in a text"""
@@ -15,11 +15,12 @@ def count_letters(text):
     return char_count
 
 def main():
-    with open("books/frankenstein.txt") as f:
+    book_path = "books/frankenstein.txt"
+    with open(book_path) as f:
         file_contents = f.read()
-        print(count_words(file_contents))
-
-        print(count_letters(file_contents))
+        
+        print(f"--- Begin report of {book_path} ---")
+        print(f"{count_words(file_contents)} words found in document\n\n")
 
 if __name__ == "__main__":
     main()
